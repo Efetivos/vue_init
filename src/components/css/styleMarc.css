@@ -1,0 +1,300 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* InitiProjec*/
+
+#body{
+	background-color:#b3bdc4;
+	overflow-x: hidden;
+}
+
+
+/*
+.linesVert {
+	z-index: 1;
+	background-color: #fff;
+	opacity: 0.4;
+	position: fixed;
+	width: 0.9px;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+#lineVert1 {
+	left: 17.4%;
+	}
+
+#lineVert2 {
+	left: 82.5%;
+	}
+
+
+.linesHori {
+	z-index: 1;
+	background-color: #FFFFFF;
+	opacity: 0.4;
+	position: fixed;
+	width: 100%;
+	height: 0.9px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+#lineHori1 {
+	top: 24.9%;
+	}
+
+#lineHori2 {
+	top: 74.9%;
+	}
+*/
+
+.sectionProject {
+	height: 100vh;
+	width: 100%;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.coverProject {
+	background-color: #000000;
+	height: 100vh;
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+
+	justify-content: center;
+	overflow: hidden;
+
+}
+#exploreContainer{
+	position: absolute;
+	display: flex;
+	flex-direction: row;
+	bottom: 20px;
+	align-items: center;
+}
+#tracoExplore{
+	position: absolute;
+	width: 1px;
+	height: 90px;
+	background-color: #AABAC6;
+}
+.explore{
+	margin-left: 10px;
+	font-family: "josefin-sans";
+	color: #FFFFFF;
+	letter-spacing: 1px;
+	text-align: center;
+}
+#imgNmd {
+	background: url(../images/MARCO_Cover2.png);
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: auto;
+	background-position-x: center;
+	background-position-y: center;
+
+}
+
+
+h1{	
+	color: #FFFFFF;
+	font-family: josefin-sans;
+	font-style: normal;
+	font-weight: 300;
+	font-size: 34px;
+	text-align: center;
+	letter-spacing: 5px;
+	cursor: pointer;
+}
+
+h1 span {
+	color: #C3C3C3;
+	font-size: small;
+	padding-top: 0px;
+}
+
+
+/*Section DescProjecto*/
+.fullWidth{
+	display: flex;
+	width: 100%;
+	flex-direction: column;
+	justify-content: center;
+}
+
+#descricao{
+	height: 600px;
+	background-color: #000000;
+}
+#descrProjeto{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
+	
+	
+}
+#descrProjeto p {
+	font-size: 20px;
+	margin-left: 15vw;
+	padding: 12px;
+	font-family: "josefin-sans";
+	color: #FFFFFF;
+	color: rgba(255,255,255,1.00);
+}
+#descrProjeto p span {
+	color:#E7E8E7;
+}
+
+
+
+/*Section photoDecor*/
+
+#photoDecor{
+	height: 1000px;
+	background: transparent url(../images/PrintsMARCONATTO.png) no-repeat center center;
+    background-size: cover;
+}
+
+/*Section videoProject*/
+#videoProject{
+	height: 600px;
+	background-color: #FFFFFF;
+	align-items: center;
+}
+#video{
+	width: 75%;
+	height: 400px;
+	background: transparent url(../images/adidasNmd.jpg) no-repeat center center;
+	background-size: cover;
+}
+
+
+/*Section imgProject*/
+
+#imgs{
+	background-color: #050505;
+}
+.imgProject {
+	width: 100%;
+	padding-top: 80px;
+	
+}
+
+/*Section Transition*/
+#transition {
+	width: 100%;
+	height: 400px;
+
+	background-color: #000000;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*DeskTop BP*/
+@media (min-width: 960px){
+	
+	h1{
+		font-size: 45px;
+	}
+	
+h1 span {
+	font-size: 15px;
+}
+	
+#videoProject{
+	height: 760px;
+}
+	
+#video {
+	width: 75%;
+	height: 500px;
+}
+	
+#imgs{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+	.imgProject{
+		margin-top: 120px;
+		width: 85%;
+		max-width: 1600px;
+	}
+	
+	
+	
+	
+	
+	
+}

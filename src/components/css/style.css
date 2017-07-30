@@ -1,0 +1,398 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* InitiProjec*/
+
+#body{
+	background-color:#b3bdc4;
+	overflow-x: hidden;
+}
+
+#logoContainer{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	width: auto;
+}
+#logo{
+	margin-top: 25px;
+	position: fixed;
+	background: url(../images/LOGOEFE_FlatSimbol.png);
+	width: 50px;
+	height: 50px;
+	background-size: cover;
+	
+}
+
+#menuContainer{
+	z-index: 1;
+	position: fixed;
+	height: 25vh;
+	width: 17.3vw;
+	right: 0;
+	transition-duration: 3s;
+}
+
+#menuDiv{
+	color: #FFFFFF;
+	font-family: josefin-sans;
+	font-style: normal;
+	font-weight: 200;
+	font-size: 10px;
+	text-align: center;
+	letter-spacing: 5px;
+	text-transform: uppercase;	
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+	transition-duration: 1.5s;
+}
+
+#menuDiv:hover{
+	background-color: rgba(255,255,255,0.2);
+	letter-spacing: 6.5px;
+	
+}
+#menuDiv p {
+	cursor: pointer;
+}
+
+
+.linesVert {
+	z-index: 1;
+	background-color: #fff;
+	opacity: 0.4;
+	position: fixed;
+	width: 0.9px;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+#lineVert1 {
+	left: 17.4%;
+	}
+
+#lineVert2 {
+	left: 82.5%;
+	}
+
+
+.linesHori {
+	z-index: 1;
+	background-color: #FFFFFF;
+	opacity: 0.4;
+	position: fixed;
+	width: 100%;
+	height: 0.9px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+#lineHori1 {
+	top: 24.9%;
+	}
+
+#lineHori2 {
+	top: 74.9%;
+	}
+
+.sectionIntro {
+	position: fixed;
+	background-color: #000;
+	height: 100vh;
+	width: 100%;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+	flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.sectionProject {
+	height: 100vh;
+	width: 100%;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.coverIntro {
+	background-color: #000;
+	height: 50vh;
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	overflow: hidden;
+
+}
+.coverProject {
+	height: 70vh;
+	width: 85%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	overflow: hidden;
+
+}
+
+.fader{
+	height: 100%;
+	width: 100%;
+	position: absolute;
+
+}
+
+#faderIntroBlack{
+	background-color: #000;
+}
+#faderIntroGrey{
+	background-color:#353535;
+}
+
+
+#imgNmd, .introNmd {
+	background: url(../images/NMD_Cover.png);
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: auto;
+	background-position-x: center;
+	background-position-y: center;
+
+}
+#imgBmw, .introBmw {
+	background: url(../images/BMW_Cover.png);
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: auto;
+	background-position-x: center;
+	background-position-y: center;
+}
+#imgEms, .introEms {
+	background: url(../images/EMS_Cover.png);
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: auto;
+	background-position-x: center;
+	background-position-y: center;
+}
+#imgMarc, .introMarc {
+	background: url(../images/MARCO_Cover2.png);
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: auto;
+	background-position-x: center;
+	background-position-y: center;
+}
+#imgRLA, .introRLA {
+	background: url(../images/RLA_Cover.png);
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: auto;
+	background-position-x: center;
+	background-position-y: center;
+}
+#imgBB, .introBB {
+	background: url(../images/BARBA_Cover.png);
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: auto;
+	background-position-x: center;
+	background-position-y: center;
+}
+#imgCof, .introCof {
+	background: url(../images/COFFE_Cover.png);
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: auto;
+	background-position-x: center;
+	background-position-y: center;
+}
+
+#imgUltra, .introUltra {
+	background: url(../images/ULTRA_Cover.png);
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: auto;
+	background-position-x: center;
+	background-position-y: center;
+}
+#imgProsp, .introProsp {
+	background: url(../images/PROSPERO_Cover.png);
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: auto;
+	background-position-x: center;
+	background-position-y: center;
+}
+
+
+h1{	
+	color: #FFFFFF;
+	font-family: josefin-sans;
+	font-style: normal;
+	font-weight: 300;
+	font-size: 34px;
+	text-align: center;
+	letter-spacing: 5px;
+	cursor: pointer;
+}
+
+h1 span {
+	color: #C3C3C3;
+	font-size: small;
+	padding-top: 0px;
+}
+
+
+/*MOBILE BP*/
+@media (max-width: 480px){
+	
+	
+#box1{
+	width: 45%;
+	height: 100vh;
+	border: 1px solid rgba(255, 255, 255, .30);
+}
+	
+#menuContainer{
+	width: 26.7vw;
+}
+	
+h1{	
+	font-size: 25px;
+
+}
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+}
