@@ -1,5 +1,5 @@
 <template>
-    
+<router-link to="/"><div id="forca"> Olaa  Treta</div></router-link>
 </template>
 
 
@@ -9,5 +9,8 @@
 
 
 <style>
+    #forca{
+        color: aqua;
+    }
 
 </style>

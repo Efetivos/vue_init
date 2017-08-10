@@ -3,6 +3,7 @@ var utils = require('./utils')
 var config = require('../config')
 var vueLoaderConfig = require('./vue-loader.conf')
 
+var gsapPath = "/node_modules/gsap/src/uncompressed/";
 function resolve (dir) {
   return path.join(__dirname, '..', dir)
 }
