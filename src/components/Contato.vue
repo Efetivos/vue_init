@@ -8,9 +8,4 @@
 </script>
 
 
-<style>
-    #forca{
-        color: aqua;
-    }
-
-</style>
+<style src="./css/style.css"></style>
