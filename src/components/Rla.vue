@@ -1,5 +1,5 @@
 <template>
-<h1>Rla aqui</h1>
+<h1>Rla aqui, bora</h1>
 </template>
 
 <style>
