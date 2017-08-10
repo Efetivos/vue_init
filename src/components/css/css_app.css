@@ -41,3 +41,17 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+#logoContainer {
+    margin-top: 40px;
+    display: flex;
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+#logo {
+    background: url(../images/LOGOEFE_FlatSimbol.png) no-repeat center;
+    background-size: cover;
+    width: 60px;
+    height: 60px;
+}

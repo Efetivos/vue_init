@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import Hello from '@/components/Hello'
 import Contato from '@/components/Contato'
 import Rla from '@/components/Rla'
+import Sobre from '@/components/Sobre'
 
 Vue.use(Router)
 
@@ -20,6 +21,10 @@ export default new Router({
     {
       path: '/rla',
       component: Rla
+    },
+    {
+      path: '/sobre',
+      component: Sobre
     }
   ]
 })

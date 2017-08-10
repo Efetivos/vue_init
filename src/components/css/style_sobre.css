@@ -1,0 +1,418 @@
+/* InitiProjec*/
+
+#body{
+	background-color:#000000;
+}
+
+
+.fullWidth{
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+#sobre{
+	height: 740px;
+}
+#photoSobre{
+	background: url(../images/photoSobre.jpg) no-repeat center;
+	opacity: 0.6;
+	width: 66%;
+	height: 450px;
+	margin-left: 25%;
+	position: absolute;
+	background-size: cover;
+}
+
+#efetTitle {
+	color: #FFFFFF;
+	font-family: josefin-sans;
+	font-style: normal;
+	font-weight: 600;
+	font-size: 89px;
+	position: absolute;
+	z-index: 1;
+	margin-top: 200px;
+	margin-left: 3%;
+	display: flex
+}
+p   {
+	color: #9B9B9B;
+	font-family: josefin-sans;
+	font-style: normal;
+	font-weight: 400;
+	font-size: 20px;
+	line-height: 27px;
+}
+#descSobre p{
+		margin-top: 480px;
+
+}
+
+
+
+
+h2 {
+	color: #FFFFFF;
+	font-family: josefin-sans;
+	font-style: normal;
+	font-weight: 600;
+	font-size: 31px;
+
+}
+#sejaEfetivos h2{
+	position: absolute;
+	width: auto;
+	
+}
+#sejaEfetivos {
+	width: auto;
+	margin-left: 124px;
+	margin-top: 28px;
+}
+
+
+#descSobre {
+	height: auto;
+	width: 280px;
+	margin-left: 8%;
+}
+
+
+
+#services{
+	width: 100%;
+}
+
+#services h2{
+	font-size: 18px;
+	font-weight: 400;
+	text-align: center;
+	letter-spacing: 3px;
+	line-height: 30px;
+	
+}
+
+#somosEsp{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	
+}
+
+#somosE{	
+	width: 280px;
+	
+}
+
+
+
+.containerArticle {
+	margin-top: 80px;
+	
+}
+
+
+.number{
+	color: #fff;
+	font-weight: 600;
+	font-size: 80px;
+	width: auto;
+	margin-left: 60%;
+	position: absolute;
+	margin-top: -20px;
+	
+}
+
+.wrapPhoto{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: auto;
+	width: 100%;
+}
+
+.photoService{
+	width: 85%;
+	height: 420px;
+	background-color: aqua;
+}
+.titleService{
+	font-family: "josefin-sans";
+	color: #FFFFFF;
+	font-size: 45px;
+	font-weight: 600;
+	position: absolute;
+	margin-top: -15px;
+	
+	}
+.titleS{
+	margin-left: 5%;
+}
+.boxDesc{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 140px;
+	
+}
+.descService{
+	padding-top: 60px;
+	width: 260px;
+}
+.descService p span{
+	color: #fff;
+}
+
+.btnService{
+	padding: 12px 65px 12px 65px;
+	border: solid 1px #4E4E4E;
+	margin: 40px 0 40px 0;
+	transition-duration: 1.2s;
+}
+
+.btnService p{
+	color: #FFF;
+	font-weight: 600px;
+	font-size: 11px;
+	letter-spacing: 4px;
+	
+}
+
+.btnService:hover{
+	background-color: rgba(255,255,255,0.20);
+}
+
+.titleServiceVid{
+	font-family: "josefin-sans";
+	color: #FFFFFF;
+	font-size: 45px;
+	font-weight: 600;
+	position: absolute;
+	margin-top: -47px;
+	
+	}
+#titleVideos{
+	margin-left: 5%;
+	margin-bottom: 40px;
+}
+
+#callTo{
+	background-color: #fff;
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	
+}
+.boxCall{
+	width: 280px;
+}
+.boxCall{
+	width: 280px;
+}
+.boxCall p {
+	padding-bottom: 35px;
+	text-align: center;
+	letter-spacing: 1px;
+}
+
+.boxCall p span {
+	color: #000000;
+	font-weight: 800;
+	text-decoration: underline;
+}
+#smile{
+	width: 100%;
+	height: 45px;
+	background: url(../images/smile.png)  no-repeat center;
+	background-size: 45px;
+}
+
+#topoContainer{
+	width: 100%;
+	height: 400px;
+	background-color: #000;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	
+}
+#topoBtn{
+	width: 20px;
+	height: 20px;
+	background: url(../images/arrowUp.png) no-repeat center;
+	background-size: 25px 25px ;
+	border: solid 1px rgba(255,255,255,0.32);	
+	padding: 25px;	
+}
+
+
+
+/* BREAK POINT TABLET*/
+@media (min-width: 481px) and (max-width: 960px){
+	
+#efetTitle {
+	font-size: 120px;
+	
+	}
+
+#descSobre {
+	width: 480px;
+}
+	
+
+#somosE{	
+	width: 480px;
+}
+	
+
+
+.titleServiceVid, .titleService{
+		width: 480px;
+		margin-top: -15px;	
+	}
+#titleVideos{
+	margin-left: 15%;
+	margin-bottom: 40px;
+}
+	
+	
+.descService{
+	width: 480px;
+}
+
+.boxCall{
+	width: 480px;
+}
+.boxCall{
+	width: 480px;
+}
+
+}/* fim BP TABLET*/
+
+
+/* BREAK DESK*/
+@media (min-width: 961px) {
+	
+	#sobre{
+	height: 100vh;
+}
+#photoSobre{
+	background-color: #999999;
+	width: 40%;
+	height: 95vh;
+	margin-left: 50%;
+	position: absolute;
+}
+
+			
+#efetTitle {
+	font-size: 250px;
+	margin-top: 15vh;
+	
+	}
+
+#descSobre p{
+	width: 400px;
+	margin-top:55vh;
+	line-height: 35px;
+	
+}
+	
+	#somosEsp{
+	align-items: flex-start;
+	padding-left:5%;
+	padding-top: 200px;
+	
+}
+#somosE{	
+	width: 100vh;
+}
+	
+#sejaEfetivos {
+	margin-left: 42%;
+	margin-top: 28px;
+	letter-spacing: 2px;
+}
+
+	.containerMasterArt{
+		max-width: 1400px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		margin: 0 auto;
+			
+	}
+.titleServiceVid, .titleService{
+	width: 960px;
+	margin-top: 30px;
+	font-size: 70px;
+	padding-left: 3.5%;
+	}
+
+	.photoService{
+		height: 87vh;
+		width: 87vw;
+		max-width: 1400px;
+	}
+	
+#titleVideos{
+	margin-bottom: 40px;
+}
+.number{
+	font-size: 100px;
+	right: 20%;
+		
+	}
+.boxDesc{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
+	margin: 0 0 240px 5%;
+	width: 80%;	
+}
+.descService{
+	padding-left: 9%;
+	text-align: left;
+	width: 800px;
+	
+}
+.descService p {
+	letter-spacing: 1px;
+	line-height: 32px;
+	padding-top: 65px;
+	
+}
+.btnService {
+	margin-left: 69%;
+	margin-top: 60px;
+	
+	}
+.boxCall{
+	width: 480px;
+}
+.boxCall{
+	width: 480px;
+}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+}

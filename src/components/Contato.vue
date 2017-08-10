@@ -1,9 +1,4 @@
-<template>
-
-<body>
-
-<main id="body">
-
+<template><main id="body">
 <!-- Init Contato -->
 <div class="title"><h1 id="titleContato">Contato</h1></div>
 <div class="photoBg"></div>
@@ -36,9 +31,7 @@
 <div id="rodape">
 	<div id="logoFlat"></div>
 </div>
-</main>
-
-</body>
+</main></body>
 </template>
 
 
