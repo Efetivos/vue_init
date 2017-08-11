@@ -3,6 +3,7 @@
 <div>
     <div class="box"  id="red"></div>
     <div class="box"  id="blue"></div>
+    <div class="box"  id="yellow"></div>
     </div>
 </template>
 
@@ -14,9 +15,10 @@ export default { mounted () {
     TweenMax.from('#red', 5, {width: 0});
 
     const tlVueGsap = new TimelineMax()
-    .from('.blue', 5, {width: 0})
-    .to('.blue', 5, {x: 400}) 
+    .from('#blue', 5, {width: 0})
+    .to('#blue', 5, {x: 400})
     
+    $('#yellow').hide();
     } //Close Mounted
 }//Close Export Defautl
 
@@ -34,6 +36,9 @@ export default { mounted () {
 }
 #blue{
     background-color: blue;
+}
+#yellow{
+    background-color: yellow;
 }
 
 </style>
