@@ -2,7 +2,6 @@
   <div id="app">
     <div id="logoContainer">
       <div id="logo"></div>
-
     </div>
     <router-view></router-view>
   </div>
