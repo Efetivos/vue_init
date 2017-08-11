@@ -3,7 +3,6 @@ var utils = require('./utils')
 var config = require('../config')
 var vueLoaderConfig = require('./vue-loader.conf')
 
-var gsapPath = "/node_modules/gsap/src/uncompressed/";
 function resolve (dir) {
   return path.join(__dirname, '..', dir)
 }
@@ -23,7 +22,8 @@ module.exports = {
     extensions: ['.js', '.vue', '.json'],
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
-      '@': resolve('src')
+      '@': resolve('src'),
+      'ScrollGsap': path.resolve ('./node_modules/scrollmagic/scrollmagic/uncompressed/plugins/animation.gsap.js')
     }
   },
   module: {

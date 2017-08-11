@@ -10,6 +10,9 @@
 <script>
 import { TweenMax, TimelineMax } from 'gsap'
 import $ from 'jquery'
+import ScrollMagic from 'scrollmagic'
+import gsap from 'scrollmagic'
+
 
 export default { mounted () { 
     TweenMax.from('#red', 5, {width: 0});
@@ -17,8 +20,17 @@ export default { mounted () {
     const tlVueGsap = new TimelineMax()
     .from('#blue', 5, {width: 0})
     .to('#blue', 5, {x: 400})
-    
-    $('#yellow').hide();
+
+const controller = new ScrollMagic.Controller();
+
+const scene = new ScrollMagic.Scene({
+        triggerElement: "#red"
+    })
+    .setTween(tlVueGsap)
+    .addTo(controller);
+
+
+    //$('#yellow').hide();
     } //Close Mounted
 }//Close Export Defautl
 
@@ -35,9 +47,11 @@ export default { mounted () {
     background-color: red;
 }
 #blue{
+    position: absolute;
     background-color: blue;
 }
 #yellow{
+    margin-top: 2000px;
     background-color: yellow;
 }
 
