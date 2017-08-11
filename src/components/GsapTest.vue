@@ -5,14 +5,9 @@
 
 <script>
 import { TweenMax } from 'gsap'
-import $ from 'jquery'
 
-export default {
+export default { mounted () { TweenMax.from('#box', 5, {width: 0}) }
 }
-
-TweenMax.to('#box', 10, {width: 0})
-
-$('#box').hide()
 </script>
 
 <style>
