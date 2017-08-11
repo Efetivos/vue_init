@@ -11,7 +11,7 @@
 import { TweenMax, TimelineMax } from 'gsap'
 import $ from 'jquery'
 import ScrollMagic from 'scrollmagic'
-import ScrollGsap from 'scrollmagic'
+import gsap from 'scrollmagic'
 
 
 export default { mounted () { 
