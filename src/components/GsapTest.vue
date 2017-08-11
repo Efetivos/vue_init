@@ -1,29 +1,38 @@
+
 <template>
 <div>
-    <div id="box"></div>
-    <div id="box2"></div>
+    <div class="box"  id="red"></div>
+    <div class="box"  id="blue"></div>
     </div>
 </template>
 
 <script>
 import { TweenMax, TimelineMax } from 'gsap'
-// import { TimelineMax } from 'gsap'
+import $ from 'jquery'
 
-export default { mounted () { TweenMax.from('#box', 5, {width: 0}); const tlVueGsap = new TimelineMax(); tlVueGsap.from('#box2', 5, {width: 0}).to('#box', 5, {opacity: 0}) }
-}
+export default { mounted () { 
+    TweenMax.from('#red', 5, {width: 0});
+
+    const tlVueGsap = new TimelineMax()
+    .from('.blue', 5, {width: 0})
+    .to('.blue', 5, {x: 400}) 
+    
+    } //Close Mounted
+}//Close Export Defautl
+
+
 </script>
 
 <style>
-#box{
+.box{
     margin: 50px 50px;
     width: 80px;
     height: 80px;
+}
+#red{
     background-color: red;
 }
-#box2{
-    margin: 50px 50px;
-    width: 80px;
-    height: 80px;
+#blue{
     background-color: blue;
 }
 
