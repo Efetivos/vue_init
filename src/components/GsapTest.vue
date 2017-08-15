@@ -11,7 +11,7 @@
 import { TweenMax, TimelineMax } from 'gsap'
 import $ from 'jquery'
 import ScrollMagic from 'scrollmagic'
-import gsap from 'scrollmagic'
+import 'ScrollMagicGSAP'
 
 
 export default { mounted () { 
@@ -27,13 +27,14 @@ export default { mounted () {
 
 
     const scene = new ScrollMagic.Scene({
-        triggerElement: "#red"
+        triggerElement: "#red",
+        triggerHook: 0.0001
     })
     .setTween(tlVueGsap)
     .addTo(controller);
 
 // Testing on functionn
-    var scene2 = new ScrollMagic.Scene({
+    /*var scene2 = new ScrollMagic.Scene({
         triggerElement: "#yellow",
         triggerHook: 1
     })
@@ -41,7 +42,7 @@ export default { mounted () {
         TweenMax.from('#blue', 5, {x: 200});
     })
     .addIndicators()
-    .addTo(controller);
+    .addTo(controller); */
 
     //$('#yellow').hide();
     } //Close Mounted

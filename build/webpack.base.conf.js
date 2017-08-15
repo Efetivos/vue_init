@@ -22,7 +22,8 @@ module.exports = {
     extensions: ['.js', '.vue', '.json'],
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
-      '@': resolve('src')
+      '@': resolve('src'),
+      "ScrollMagicGSAP": "scrollmagic/scrollmagic/uncompressed/plugins/animation.gsap"
     }
   },
   module: {
@@ -44,6 +45,10 @@ module.exports = {
           limit: 10000,
           name: utils.assetsPath('img/[name].[hash:7].[ext]')
         }
+      },
+      {
+        test: /\.js$/,
+        loader: "imports-loader?define=>false"
       },
       {
         test: /\.(mp4|webm|ogg|mp3|wav|flac|aac)(\?.*)?$/,
