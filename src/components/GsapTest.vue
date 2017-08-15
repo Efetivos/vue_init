@@ -33,18 +33,6 @@ export default { mounted () {
     .setTween(tlVueGsap)
     .addTo(controller);
 
-// Testing on functionn
-    /*var scene2 = new ScrollMagic.Scene({
-        triggerElement: "#yellow",
-        triggerHook: 1
-    })
-    .on('start', function () {
-        TweenMax.from('#blue', 5, {x: 200});
-    })
-    .addIndicators()
-    .addTo(controller); */
-
-    //$('#yellow').hide();
     } //Close Mounted
 }//Close Export Defautl
 </script>
