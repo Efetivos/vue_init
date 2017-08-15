@@ -14,7 +14,8 @@ import ScrollMagic from 'scrollmagic'
 import 'ScrollMagicGSAP'
 
 
-export default { mounted () { 
+export default { 
+    mounted () { 
 
     const controller = new ScrollMagic.Controller();
 
