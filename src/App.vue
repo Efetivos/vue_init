@@ -7,10 +7,6 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: 'app'
-}
-</script>
+<script></script>
 
 <style src="./components/css/css_app.css"></style>
