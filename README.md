@@ -39,7 +39,7 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
  (Verificar se todos constam no  Package.json)
  ```
 
- # gsap.animation(ScrollMagic)
+ ### gsap.animation(ScrollMagic)
  >Install imports-loader:
  > npm install --save-dev imports-loader (Verificar Package.json)
  > Incluir no arquivo "webpack.base.conf.js
@@ -64,7 +64,7 @@ module: {
 ....
  ```
 
-# IMPORTAR/INSERIR DENTRO DO COMPONENTE.VUE > Dentro da tag <script>
+## IMPORTAR/INSERIR DENTRO DO COMPONENTE.VUE > Dentro da tag <script>
  ``` bash
 import { TweenMax, TimelineMax } from 'gsap'
 import $ from 'jquery'
@@ -97,3 +97,12 @@ beforeRouteLeave(to, from, next) {
     var tlTrans = new TimelineMax({onComplete:next}).fromTo(this.$refs.cross, 2 ,{width: 0}, {width:"100%", ease: Power3.easeIn})
   }
   ```
+
+## Scroll to top mudança da rota
+> dentro do  export default {...}
+ ``` bash
+created() {
+        //Scrolls to top when view is displayed
+        window.scrollTo(0, 0);
+    }
+```

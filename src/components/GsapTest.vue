@@ -4,6 +4,7 @@
     <div class="box"  id="red"></div>
     <div class="box"  id="blue"></div>
     <div class="box"  id="yellow"></div>
+    <div id="btn-back" ><router-link to="/sobre">Go Back Home</router-link></div>  
     </div>
 </template>
 

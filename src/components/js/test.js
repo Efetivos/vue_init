@@ -5,6 +5,10 @@ import 'ScrollMagicGSAP'
 
 
 export default { 
+    created() {
+        //Scrolls to top when view is displayed
+        window.scrollTo(0, 0);
+    },
     mounted () { 
 
     const controller = new ScrollMagic.Controller();
@@ -24,5 +28,11 @@ export default {
     .setTween(tlVueGsap)
     .addTo(controller);
 
-    } //Close Mounted
+    }, //Close Mounted
+
+    beforeRouteLeave(to, from, next) {
+        var tlTrans = new TimelineMax({onComplete:next}).to('#yellow', 2 ,{rotation: 360, x:600})
+        
+      }
+
 }//Close Export Defautl

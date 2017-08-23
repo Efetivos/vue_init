@@ -73,7 +73,7 @@
 <section id="callTo">
 <div class="boxCall">
 	<p>Queremos ajudar no seu projeto, então não se acanhe.</p>
-	<p><span>Clique aqui</span> e nos conte mais sobre ele.</p>
+	<p><router-link to="/"><span>Clique aqui</span></router-link> e nos conte mais sobre ele.</p>
 	<div id="smile"></div>
 </div>	
 </section>
@@ -87,7 +87,15 @@
 </template>
 
 <script>
-
+export default { 
+	  created() {
+        //Scrolls to top when view is displayed
+        window.scrollTo(0, 0);
+    },
+ beforeRouteLeave(to, from, next) {
+				var tlTrans = new TimelineMax({onComplete:next}).to('#body', 2 ,{opacity:0, backgroudColor:'#000'})
+      }
+}
 </script>
 
 <style src="./css/style_sobre.css"></style>
