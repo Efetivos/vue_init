@@ -7,6 +7,7 @@
   </div>
 </template>
 
-<script></script>
+<script>
+</script>
 
 <style src="./components/css/css_app.css"></style>

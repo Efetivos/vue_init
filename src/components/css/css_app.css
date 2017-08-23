@@ -47,8 +47,7 @@ table {
     position: fixed;
     justify-content: center;
     align-items: center;
-	width: 100%;
-	background-color: red;
+    width: 100%;
 }
 #logo {
     background: url(../images/LOGOEFE_FlatSimbol.png) no-repeat center;
