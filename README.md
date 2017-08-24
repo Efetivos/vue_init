@@ -98,11 +98,12 @@ beforeRouteLeave(to, from, next) {
   }
   ```
 
-## Scroll to top mudança da rota
+## Scroll to top mudança da rota / Titulo da Pagina 
 > dentro do  export default {...}
  ``` bash
 created() {
         //Scrolls to top when view is displayed
-        window.scrollTo(0, 0);
+        window.scrollTo(0, 0); //
+        window.document.title = "Titulo da Página"
     }
 ```

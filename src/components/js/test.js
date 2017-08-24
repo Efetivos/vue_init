@@ -8,12 +8,14 @@ export default {
     created() {
         //Scrolls to top when view is displayed
         window.scrollTo(0, 0)
+        window.document.title = "GSAP Test"
         
            // this.$router.push({ path: '/sobre' })
         
     },
     mounted () { 
-
+        TweenMax.set('#body',{backgroundColor:"#fff"})
+        
     const controller = new ScrollMagic.Controller();
 
     TweenMax.from('#red', 5, {width: 0});
@@ -53,7 +55,8 @@ export default {
     }, //Close Mounted
 
     beforeRouteLeave(to, from, next) {
-        var tlTrans = new TimelineMax({onComplete:next}).to('#yellow', 2 ,{rotation: 360, x:600, backgroudColor:'red'})
+        var tlTrans = new TimelineMax({onComplete:next}).to('#body', 2 ,{backgroundColor:'#000'})
+        .to(window, 3, {scrollTo:800});
         
       }
 

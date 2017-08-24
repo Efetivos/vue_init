@@ -86,16 +86,6 @@
 </main></body>
 </template>
 
-<script>
-export default { 
-	  created() {
-        //Scrolls to top when view is displayed
-        window.scrollTo(0, 0);
-    },
- beforeRouteLeave(to, from, next) {
-				var tlTrans = new TimelineMax({onComplete:next}).to('#body', 2 ,{opacity:0, backgroudColor:'#000'})
-      }
-}
-</script>
+<script type="script" src="./js/sobre.js"></script>
 
 <style src="./css/style_sobre.css"></style>
