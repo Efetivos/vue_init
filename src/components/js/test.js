@@ -55,8 +55,9 @@ export default {
     }, //Close Mounted
 
     beforeRouteLeave(to, from, next) {
-        var tlTrans = new TimelineMax({onComplete:next}).to('#body', 2 ,{backgroundColor:'#000'})
-        .to(window, 3, {scrollTo:800});
+        var tlTrans = new TimelineMax({onComplete:next}).to(window, 6, {scrollTo:  0, ease: Power4.easeInOut})
+        .to('#body', 2 ,{backgroundColor:'#000'})
+        
         
       }
 

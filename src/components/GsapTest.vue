@@ -12,7 +12,7 @@
 
 <style>
 .box{
-    margin: 50px 50px;
+    padding: 50px 50px;
     width: 80px;
     height: 80px;
 }
