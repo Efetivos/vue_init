@@ -107,3 +107,9 @@ created() {
         window.document.title = "Titulo da Página"
     }
 ```
+
+### Linkar CSS & JS dentro do Single File Component
+ ``` bash
+<script type="script" src="./js/mainbb.js"></script>
+<style scoped src="./css/styleBb.css"></style> 
+```
