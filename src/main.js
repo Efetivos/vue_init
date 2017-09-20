@@ -8,7 +8,9 @@ import $ from 'jquery'
 import ScrollMagic from 'scrollmagic'
 import 'ScrollMagicGSAP'
 
+
 Vue.config.productionTip = false
+
 
 /* eslint-disable no-new */
 new Vue({
@@ -16,4 +18,5 @@ new Vue({
   router,
   template: '<App/>',
   components: { App }
+  
 })

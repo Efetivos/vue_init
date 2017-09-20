@@ -4,13 +4,14 @@ import Contato from '@/components/Contato'
 import Rla from '@/components/Rla'
 import Sobre from '@/components/Sobre'
 import GsapTest from '@/components/GsapTest'
+import Parallax from '@/components/Parallax'
 
 Vue.use(Router)
 
 export default new Router({
   routes: [
     {
-      path: '/',
+      path: '/gsap',
       name: 'GsapTest',
       component: GsapTest
     },
@@ -25,6 +26,11 @@ export default new Router({
     {
       path: '/sobre',
       component: Sobre
+    }
+    ,
+    {
+      path: '/',
+      component: Parallax
     }
   ]
 })
