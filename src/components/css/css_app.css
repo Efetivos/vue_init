@@ -25,6 +25,7 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
+	background-color:  #000;
 }
 ol, ul {
 	list-style: none;
@@ -55,3 +56,37 @@ table {
     width: 60px;
     height: 60px;
 }
+
+
+/*  ATRIBUTES  FOR PARALLAX */
+html {
+	height: 100%;
+	overflow: hidden;
+  }
+  body { 
+	margin:0;
+	padding:0;
+	height: 100%;
+	overflow-y: scroll;
+	overflow-x: hidden;
+	perspective: 1px;
+  }
+  /*  ATRIBUTES  FOR PARALLAX */
+  .ctn-menu {
+	  display: flex;
+	  position: fixed;
+	  top: 10px;
+	  left: 10px;
+	  z-index: 999;
+  }
+
+  a {
+	  margin: 15px;
+  }
+
+  p {
+	color: #fff;
+	font-size: 45px;
+	
+  }
+  

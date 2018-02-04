@@ -1,49 +1,75 @@
 
 <template>
-<div id="body">
+
+<div id="para"> 
   
-<div class="photo-prlx photo"></div>
-<div class="ctn-divisor"></div>
-
-<div class="photo-prlx photo"></div>
-<div class="ctn-divisor"></div>
-
-
-<div class="photo-prlx photo"></div>
-<div class="ctn-divisor"></div>
-
-
-<div class="photo-prlx photo"></div>
-<div class="ctn-divisor"></div>
-
-
-
-    <div id="btn-back" ><router-link to="/sobre">Go Back Home</router-link></div>  
+  <div class="section s0"></div>
+<div class="section s1"></div>
+<div class="box"><div class="section s2"></div></div>
+<div class="section s3"></div>
+<div class="section s4"></div>
+<div class="section s5"></div>
+<div class="section s6"></div>
 </div>
 </template>
 
-<script type="script" src="./js/parallax.js"></script>
+<script scoped  type="script" src="./js/parallax.js"></script>
 
-<style>    
-* {
-  transition: all ease-in-out 250ms;
-}  
+<style scoped> 
 
-.ctn-divisor{
+
+/* INSERIDO NO CSS DO APP.VUE
+html {
+  height: 100%;
+  overflow: hidden;
+}
+body { 
+  margin:0;
+  padding:0;
+  height: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  perspective: 1px;
+}*/
+
+.box{
+  width: 100vw;
   height: 100vh;
-  width:100vw;
-  opacity: 0.6;
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
 }
-.photo{
-   height: 120vh;
-  width:65vw;
-}
-.photo-prlx {
 
-  background: url(http://static1.purepeople.com.br/articles/7/19/19/47/@/2228537-nicki-minaj-apostou-na-producao-superjus-950x0-4.jpg) center no-repeat;
-   background-size: cover;
+.section {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  background: 50% 50% / cover;  
+  background-color: #000;
 }
-.photo-prlx{
-  transition: initial;
+.s0{
+  background-image: url('https://i.imgur.com/zuxuTsN.jpg');
+  transform: translateZ(-1px) scale(2);
+  z-index:-1;
+
+}
+
+.s2{
+  background-image: url('https://i.imgur.com/Nubk9vB.jpg');
+  transform: translateZ(-1px) scale(2);
+  z-index:-1;
+  width: 40%;
+
+}
+.s4 {
+ background-image: url('https://i.imgur.com/KG3VSS4.jpg');
+ transform: translateZ(-1px) scale(2);
+ z-index:-1;
+}
+.s6 {
+ background-image: url('https://i.imgur.com/Qj3LdS6.jpg');
+ transform: translateZ(-1px) scale(2);
+ z-index:-1;
+ 
 }
 </style>

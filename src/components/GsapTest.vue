@@ -1,31 +1,65 @@
 
 <template>
 <div id="body">
-    <div class="box"  id="red"></div>
-    <div class="box"  id="blue"></div>
-    <div class="box"  id="yellow"></div>
-    <div id="btn-back" ><router-link to="/sobre">Go Back Home</router-link></div>  
+<div class="ctn">
+  <div class="holder">
+    <div class="box"><div class="inner b1"></div></div>
+    <div class="box"><div class="inner b2"></div></div>
+    <div class="box"><div class="inner b3"></div></div>
+    <div class="box"><div class="inner b4"></div></div>
+  </div>
+</div>
 </div>
 </template>
 
-<script type="script" src="./js/test.js"></script>
+<script scoped type="script" src="./js/test.js"></script>
 
 <style>
-.box{
-    padding: 50px 50px;
-    width: 80px;
-    height: 80px;
+.ctn {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
 }
-#red{
-    background-color: red;
+.ctn .holder {
+  display: flex;
+  justify-content: center;
+  width: 400vw;
+  height: 100%;
 }
-#blue{
-    position: fixed;
-    background-color: blue;
+.ctn .holder .box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
 }
-#yellow{
-    margin-top: 2000px;
-    background-color: yellow;
+
+.inner {
+  height: 80%;
+  width: 80%;
+}
+
+.b1 {
+  background: url(http://unsplash.it/1089) center no-repeat;
+  background-size: cover;
+}
+
+.b2 {
+  background: url(http://unsplash.it/1088) center no-repeat;
+  background-size: cover;
+}
+
+.b3 {
+  background: url(http://unsplash.it/1087) center no-repeat;
+  background-size: cover;
+}
+
+.b4 {
+  background: url(http://unsplash.it/1086) center no-repeat;
+  background-size: cover;
 }
 
 </style>

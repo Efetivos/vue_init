@@ -1,5 +1,5 @@
 
-import { TweenMax, TimelineMax } from 'gsap'
+import { TweenMax, TimelineMax, DrawSVGPlugin } from 'gsap'
 import $ from 'jquery'
 import ScrollMagic from 'scrollmagic'
 import 'ScrollMagicGSAP'
@@ -15,6 +15,19 @@ export default {
 		},
 		
 		mounted(){
+
+            var oldURL = document.referrer;
+            console.log(oldURL)
+
+            
+            var tl = new TimelineMax()
+            .from('#s-letter', 4, {drawSVG: '0%', ease: Power4.easeInOut})
+            .to('#svg-s',4,{rotation:720, ease:Power1.easeOut},'-=4')
+            .from('#svg-s',4,{scale:.1, ease:Power1.easeOut},'-=4')
+
+
+
+
 			var tlHeader = new TimelineMax({delay:0.5})
 	.add('photoS')
 	.from('#photoSobre',3,{x: -100, ease: Power4.easeOut},'photoS')
@@ -59,10 +72,11 @@ $('.descService').each(function(){
     .addTo(controller);
     
     });
-		},
+        }/*,
  beforeRouteLeave(to, from, next) {
-                var tlTrans = new TimelineMax({onComplete:next}).to(window, 6, {scrollTo:"#body", ease: Power4.easeInOut})
-                .to('#body', 2 ,{opacity:0, backgroudColor:'#000'})
+                var tlTrans = new TimelineMax({onComplete:next})
+                //.to(window, 6, {scrollTo:"#body", ease: Power4.easeInOut})
+                .to('#body', .8 ,{opacity:0, backgroudColor:'#000'})
                 
-      }
+      }*/
 }

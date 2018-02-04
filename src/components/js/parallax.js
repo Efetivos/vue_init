@@ -1,12 +1,21 @@
 import { TweenMax, TimelineMax } from 'gsap'
 import $ from 'jquery'
+//import DrawSVGPlugin from "gsap/DrawSVGPlugin"
+import SplitText from "gsap/SplitText"
+import Menuefet from '../Menuefet.vue'
+import  nicescroll from 'jquery.nicescroll'
 
 
 export default { 
+
+  components: {
+    'menuefet': Menuefet
+  },
     
     created() {
+      
         
-        //Scrolls to top when view is displayed
+        //Scrolls to top when view is displaye
         window.scrollTo(0, 0)
         window.document.title = "GSAP Test"
         
@@ -14,6 +23,41 @@ export default {
         
     },
     mounted () { 
+
+      var oldURL = document.referrer;
+      alert(oldURL);
+    
+
+/*
+
+          $("html").niceScroll({
+    	cursoropacitymax: 0.5,
+		autohidemode: false,
+        zindex: "999",
+       scrollspeed: 300,
+        Mousescrollstep : 100,
+        Smoothscroll : true 
+    
+    });*/
+      
+var tl = new TimelineLite, 
+mySplitText = new SplitText("#quote", {type:"words,chars"}), 
+chars = mySplitText.chars; //an array of all the divs that wrap each character
+
+TweenLite.set("#quote", {perspective:400});
+
+tl.staggerFrom(chars, 2, {opacity:0, scale:0, y:-150, rotationX:180, transformOrigin:"0% 50% -50",  ease:Back.easeOut}, 0.01, "+=0");
+
+
+
+document.getElementById("animate").onclick = function() {
+tl.restart();
+}
+
+var tlDraw = new TimelineMax()
+.from('#s-letter', 4, {drawSVG: '0%'})
+
+
         $(window).scroll(function(e) {
             parallax();
           })
@@ -28,9 +72,9 @@ export default {
               var distanceFromBottom = offset - scroll - screenHeight
               
               if (offset > screenHeight && offset) {
-                $(this).css('background-position', 'center ' + (( distanceFromBottom  ) * 0.2) +'px');
+                $(this).css('background-position', 'center ' + (( distanceFromBottom  ) * 0.26) +'px');
               } else {
-                $(this).css('background-position', 'center ' + (( -scroll ) * 0.2) + 'px');
+                $(this).css('background-position', 'center ' + (( -scroll ) * 0.26) + 'px');
               }
             })
           }
@@ -64,4 +108,5 @@ export default {
         
       }
 
+      
 }//Close Export Defautl

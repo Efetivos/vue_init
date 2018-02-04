@@ -2,7 +2,8 @@ import { TweenMax, TimelineMax } from 'gsap'
 import $ from 'jquery'
 import ScrollMagic from 'scrollmagic'
 import 'ScrollMagicGSAP'
-
+import  Draggable  from 'gsap/Draggable'
+import  ThrowPropsPlugin from 'gsap/ThrowPropsPlugin'
 
 export default { 
     created() {
@@ -13,52 +14,43 @@ export default {
            // this.$router.push({ path: '/sobre' })
         
     },
-    mounted () { 
-        TweenMax.set('#body',{backgroundColor:"#fff"})
+    mounted () { var winH = window.innerWidth;
         
-    const controller = new ScrollMagic.Controller();
-
-    TweenMax.from('#red', 5, {width: 0});
-
-    const tlVueGsap = new TimelineMax()
-    .from('#blue', 5, {width: 0})
-    .to('#blue', 5, {x: 400})
-       
-
-    const scene = new ScrollMagic.Scene({
-        triggerElement: "#red",
-        triggerHook: 0.0001
-    })
-    .setTween(tlVueGsap)
-    .addTo(controller);
-
-/*
-  // Transition Fail 
-    const tlGoTrans = new TimelineMax({onComplete:goNext})
-    .to('#yellow',1.3 ,{x:600})
-
-    function goNext () {
-        window.location.href = '.#/sobre'
-
-    }
-    const scene2 = new ScrollMagic.Scene({
-        triggerElement: "#yellow",
-        triggerHook: 0.9
-    })
-    .setTween(tlGoTrans)
-    .addTo(controller);
-*/
-
-
-   
+        TweenMax.from('.holder',2.2,{x:1200, ease: Power3.easeOut})
+        var $holder = $('.holder')
+        
+        Draggable.create($holder , {
+          trigger: '.ctn',
+          type:'x',  
+          edgeResistance: .8,
+          bounds:'.ctn',    
+          throwProps:true,
+          snap: {
+                x: function(endValue) {
+                  console.log(endValue, Math.round(endValue / winH) * (winH/10));
+                    return Math.round(endValue / winH) * winH;
+                }, ease:Strong.easeOut
+            }  
+          
+        })
 
     }, //Close Mounted
-
-    beforeRouteLeave(to, from, next) {
-        var tlTrans = new TimelineMax({onComplete:next}).to(window, 6, {scrollTo:  0, ease: Power4.easeInOut})
-        .to('#body', 2 ,{backgroundColor:'#000'})
+/*
+      beforeRouteEnter(to, from, next) {
+        var tlTransEnter = new TimelineMax({onComplete:next})
+        //.to(window, 6, {scrollTo:"#body", ease: Power4.easeInOut})
+        .to('.box', .8 ,{opacity:0, backgroudColor:'#000'})
         
-        
-      }
-
+}, */
+beforeRouteEnter (to, from, next) {
+    if (from.name === 'Vuetif' || from.name === 'Sobre'  ){
+        next(vm => {
+            $('.box').css('background-color','#000');
+                 $( ".box" ).trigger( "click" );
+            console.log('Veio do Vuetif')
+        });
+        } else {
+            next();
+        }
+    }
 }//Close Export Defautl
