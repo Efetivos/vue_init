@@ -1,6 +1,6 @@
 //IMPORTAR LIBS ANTES
 import { TweenMax, TimelineMax } from 'gsap'
-import 'pixi.js'
+//import 'pixi.js'
 import $ from 'jquery'
 
 export const webglMixin = {

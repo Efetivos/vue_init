@@ -79,6 +79,8 @@
     "phantomjs-prebuilt": "^2.1.14",
     "pixi-filters": "^2.5.0",
     "pixi.js": "^4.6.2",
+    "preload-js": "^0.6.3",
+    "preloadjs": "^1.0.1",
     "rimraf": "^2.6.0",
     "scrollmagic": "^2.0.5",
     "selenium-server": "^3.0.1",

@@ -1,6 +1,6 @@
 //IMPORTAR LIBS ANTES
 import { TweenMax, TimelineMax } from 'gsap'
-import 'pixi.js'
+//import 'pixi.js'
 import $ from 'jquery'
 import PixiPlugin  from 'gsap/PixiPlugin'
 // import * as filters from 'pixi-filters';
@@ -41,7 +41,7 @@ export const pixiMixin = {
     var graphics = new PIXI.Graphics();
         graphics.beginFill(0x000000);
         graphics.drawRect(0, 0, wScreen, hScreen);
-       app.stage.addChild(graphics);
+    /*  */   app.stage.addChild(graphics);
     
     // ---------- Noise Filter ...
     var filter = new PIXI.filters.NoiseFilter();
