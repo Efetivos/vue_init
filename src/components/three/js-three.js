@@ -156,7 +156,7 @@ function resize() {
 
 let time = 0;
 function animate() {
-  time = time+0.05;
+  time = time+0.04;
   material.uniforms.time.value = time;
   
   requestAnimationFrame(animate);
