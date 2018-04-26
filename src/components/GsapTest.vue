@@ -10,6 +10,7 @@
     </div>
   </div>
 
+<button @click="sobre" class="sobre-btn"> Sobre </button>
 
 <h1> CARREGADO: <span>00</span>%</h1>
   <div id="state"></div>
@@ -53,22 +54,22 @@
 }
 
 .b1 {
-  background: url(http://unsplash.it/1089) center no-repeat;
+  background: url() center no-repeat;
   background-size: cover;
 }
 
 .b2 {
-  background: url(http://unsplash.it/1088) center no-repeat;
+  background: url() center no-repeat;
   background-size: cover;
 }
 
 .b3 {
-  background: url(http://unsplash.it/1087) center no-repeat;
+  background: url() center no-repeat;
   background-size: cover;
 }
 
 .b4 {
-  background: url(http://unsplash.it/1086) center no-repeat;
+  background: url() center no-repeat;
   background-size: cover;
 }
 
@@ -133,5 +134,11 @@ body {
   box-shadow: rgba(255, 0, 0, 0) 0 0 10px 10px;
 }
 
+.sobre-btn {
+  position: absolute;
+  margin-top: 25vh;
+  z-index: 2;
+  cursor: pointer;
+}
 
 </style>

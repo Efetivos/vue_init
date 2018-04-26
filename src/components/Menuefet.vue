@@ -11,10 +11,7 @@
 </template>
 
 <script>
-import { pixiMixin } from './js/pixiMixin';
 export default {
- mixins: [ pixiMixin],
- 
      created() {
        //Scrolls to top when view is displayed
    			window.scrollTo(0, 0)

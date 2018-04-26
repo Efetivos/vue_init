@@ -2,3 +2,6 @@ build/*.js
 config/*.js
 
 src/**/*js
+
+/* eslint import/no-webpack-loader-syntax: off */
+/* eslint import/no-webpack-loader-syntax: off *

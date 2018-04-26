@@ -1,7 +1,7 @@
 <template>
 <div>
 
-<p>Olá {{ name }}, bom ter você aqui, a Efetivos é a maior monstra do mundo</p>
+<p>Olá {{ name }}, EFETIVOS</p>
     <button @click="sobre"> Sobre </button>
     <button @click="services"> Services </button>
     <button @click="contato"> Contato </button>
@@ -27,7 +27,9 @@ export default {
       this.name= 'services';      
     },
     contato:function (){
-      this.name= 'contato';      
+      this.name= 'contato'; 
+        this.$router.push({ path: '/sobre' })
+        console.log('alert')
     },
     home:function (){
       this.name= '';      
@@ -37,6 +39,18 @@ export default {
 </script>
 
 <style scoped >
+@font-face {
+    font-family: 'atheneregular';
+    src: url('./css/athene-webfont.eot');
+    src: url('./css/athene-webfont.eot?#iefix') format('embedded-opentype'),
+         url('./css/athene-webfont.woff2') format('woff2'),
+         url('./css/athene-webfont.woff') format('woff'),
+         url('./css/athene-webfont.svg#atheneregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
 body{
   background: #e2e2e2;
   display:flex;
@@ -47,6 +61,8 @@ body{
 p {
   margin-top: 15vh;
   color: #a3a3a3;
+  font-family: 'atheneregular';
+  color: #fff;
 }
 .box{
     padding: 50px 50px;

@@ -5,6 +5,13 @@ import 'ScrollMagicGSAP'
 import  Draggable  from 'gsap/Draggable'
 import  ThrowPropsPlugin from 'gsap/ThrowPropsPlugin'
 import createjs from 'preload-js'
+function importAll(r) {
+  return r.keys().map(r);
+}
+
+const images = importAll(require.context('../images/', false, /\.(png|jpe?g|svg)$/));
+
+
 
 export default { 
     created() {
@@ -15,14 +22,32 @@ export default {
            // this.$router.push({ path: '/sobre' })
         
     },
+    methods:{
+      sobre:function (){
+        this.name= 'sobre';      
+        
+        this.$router.push({ path: '/sobre' })
+      }
+    },
     mounted () { var winH = window.innerWidth;
 
+      function preloadImage(url) {
+        const img = new Image();
+        img.onload = function(){
+          alert('loaded');
+        }
+        img.src = url;
+      }
         var baseUrl = 'http://unsplash.it/108',
         arrayB = [ '.b1', '.b2', '.b3', '.b4']
         
         var go = TweenMax.from('.holder',2.2,{x:1200, ease: Power3.easeOut, paused:true})
         var $holder = $('.holder')
         
+        TweenMax.set('.b1', {background:'url('+images[2]+') center no-repeat'});
+        TweenMax.set('.b2', {background:'url('+images[3]+') center no-repeat'});
+        TweenMax.set('.b3', {background:'url('+images[4]+') center no-repeat'});
+        TweenMax.set('.b4', {background:'url('+images[5]+') center no-repeat'});
         Draggable.create($holder , {
           trigger: '.ctn',
           type:'x',  
@@ -38,66 +63,120 @@ export default {
           
         })
 
-        console.log(arrayB);
+        console.log(images);
         
 
-        var queue        = new createjs.LoadQueue(),
-        $state       = $('#state'),
-        $progress    = $('#progress'),
-        $progressbar = $('#progressbar .bar');
+    //     var queue        = new createjs.LoadQueue(),
+    //     $state       = $('#state'),
+    //     $progress    = $('#progress'),
+    //     $progressbar = $('#progressbar .bar');
     
     
-    queue.on('complete',     onComplete);
-    queue.on('error',        onError);
-    queue.on('fileload',     onFileLoad);
-    queue.on('fileprogress', onFileProgress);
-    queue.on('progress',     onProgress);
+    // queue.on('complete',     onComplete);
+    // queue.on('error',        onError);
+    // queue.on('fileload',     onFileLoad);
+    // queue.on('fileprogress', onFileProgress);
+    // queue.on('progress',     onProgress);
     
     
-    queue.loadManifest([
-      {
-        id:   '1',
-        src:  baseUrl+'1'
-      },
-      {
-        id: '2',
-        src: baseUrl+'2'
-      },
-      {
-        id:   '3',
-        src:  baseUrl+'3'
-      }
-    ]);
+    // queue.loadManifest([
+    //   {
+    //     id:   '1',
+    //     src:  images[0]
+    //   },   {
+    //     id:   '2',
+    //     src:  images[1]
+    //   },   {
+    //     id:   '3',
+    //     src:  images[2]
+    //   },   {
+    //     id:   '4',
+    //     src:  images[3]
+    //   },   {
+    //     id:   '5',
+    //     src:  images[4]
+    //   },   {
+    //     id:   '6',
+    //     src:  images[5]
+    //   },   {
+    //     id:   '7',
+    //     src:  images[6]
+    //   },   {
+    //     id:   '8',
+    //     src:  images[7]
+    //   },   {
+    //     id:   '9',
+    //     src:  images[8]
+    //   },   {
+    //     id:   '10',
+    //     src:  images[9]
+    //   },   {
+    //     id:   '11',
+    //     src:  images[10]
+    //   },   {
+    //     id:   '12',
+    //     src:  images[11]
+    //   },   {
+    //     id:   '13',
+    //     src:  images[12]
+    //   },   {
+    //     id:   '14',
+    //     src:  images[13]
+    //   },   {
+    //     id:   '15',
+    //     src:  images[14]
+    //   },   {
+    //     id:   '16',
+    //     src:  images[15]
+    //   },   {
+    //     id:   '17',
+    //     src:  images[16]
+    //   },   {
+    //     id:   '18',
+    //     src:  images[17]
+    //   },   {
+    //     id:   '19',
+    //     src:  images[18]
+    //   },   {
+    //     id:   '20',
+    //     src:  images[19]
+    //   }
+    // ]);
     
      
     
-    TweenMax.set('.ctn',{opacity:0})
-    function onComplete(event) {
-      console.log('Complete', event);
-      go.play();
-      TweenMax.to('.ctn',3,{opacity:1})
-    }
+    // TweenMax.set('.ctn',{opacity:0})
+    // function onComplete(event) {
+
+    //   console.log('Complete', event);
+    //   go.play();
+    //   TweenMax.to('.ctn',3,{opacity:1, onComplete: goRouter})
+
+    //   function goRouter () {
+    //  //  $('.sobre-btn').trigger('click')
+    //   }
+    // }
     
-    function onError(event) {
+    // function onError(event) {
       
-    }
+    // }
     
-    function onFileLoad(event) {
-    }
+    // function onFileLoad(event) {
+    // }
     
-    function onFileProgress(event) {
-    }
+    // function onFileProgress(event) {
+    // }
     
-    var count = 0 ;
-    function onProgress(event) {
-        var progress = Math.round(event.loaded * 100);
+    // var count = 0 ;
+    // function onProgress(event) {
+    //     var progress = Math.round(event.loaded * 100);
 
-        TweenMax.set('#progressbar .bar',{width:progress +'%'})
+    //     TweenMax.set('#progressbar .bar',{width:progress +'%'})
         
-        $('h1 span').text(progress)
-        console.log(progress);
+    //     $('h1 span').text(progress)
+    //     console.log(progress);
 
-    }
+    // }
 
 
 
@@ -134,7 +213,7 @@ queue.on('progress',     onProgress);
 
 queue.loadManifest([
   {
-    id:   '1',
+    id:   '21',
     src:  'http://upload.wikimedia.org/wikipedia/commons/a/a2/Polycyclic_Aromatic_Hydrocarbons_In_Space.jpg'
   },
   {

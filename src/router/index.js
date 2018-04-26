@@ -5,6 +5,7 @@ import Rla from '@/components/Rla'
 import Cross from '@/components/Cross'
 import Preloader from '@/components/Preloader'
 import GsapTest from '@/components/GsapTest'
+import Three from '@/components/Three'
 import Parallax from '@/components/Parallax'
 import Menuefet from '@/components/Menuefet'
 import Vuetif from '@/components/Vuetif'
@@ -23,6 +24,11 @@ export default new Router({
       path: '/menuefet',
       name: 'Menuefet',
       component: Menuefet
+    },
+    {
+      path: '/',
+      name: 'Three',
+      component: Three
     },
     {
       path: '/gsap',

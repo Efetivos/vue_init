@@ -11,7 +11,7 @@
 <script>
 import { webglMixin } from './js/webglMixin';
 export default {
- mixins: [ webglMixin],
+// mixins: [ webglMixin],
  
      created() {
        //Scrolls to top when view is displayed

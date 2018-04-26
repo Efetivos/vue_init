@@ -27,7 +27,25 @@ module.exports = {
     }
   },
   module: {
+    loaders: [
+      { test: /\.(glsl|frag|vert)$/, loader: 'raw', exclude: /node_modules/ },
+      { test: /\.(glsl|frag|vert)$/, loader: 'glslify', exclude: /node_modules/ }
+      ,
+      {
+        test: /\.glsl$/,
+        loader: 'webpack-glsl'
+    }
+    ],
     rules: [
+      {
+        test: /\.(glsl|vs|fs)$/,
+        loader: 'shader-loader',
+        options: {
+          glsl: {
+            chunkPath: resolve("/glsl/chunks")
+          }
+        }
+      },
       {
         test: /\.vue$/,
         loader: 'vue-loader',
@@ -57,6 +75,11 @@ module.exports = {
           limit: 10000,
           name: utils.assetsPath('media/[name].[hash:7].[ext]')
         }
+      },
+      {
+
+        test: /\.glsl$/,
+        loader: 'webpack-glsl'
       },
       {
         test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
