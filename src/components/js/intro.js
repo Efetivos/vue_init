@@ -13,22 +13,36 @@ export default {
     },
 
     mounted() {
-        var mySplitText = new SplitText(".apenas", { type: "chars, words" }),
-            tlApenas = new TimelineMax(),
-            numChars = mySplitText.chars.length,
-            durations = 3
+        TweenMax.set('html', { overflow: 'hidden !important' })
+        var durations = 3
 
         TweenLite.defaultEase = Linear.easeNone;
 
 
 
         //<!-- --------- tlApenas Seja --------- -->
+        var myApenas = new SplitText(".apenas", { type: "chars, words" }),
+            tlApenas = new TimelineMax(),
+            numChars = myApenas.chars.length
+
         for (var i = 0; i < numChars; i++) {
-            //random value used as position parameter
-            tlApenas.from(mySplitText.chars[i], 2, { opacity: 0 }, Math.random() * 10)
+            tlApenas.from(myApenas.chars[i], 2, { opacity: 0}, Math.random() * 10)
                 .add('end')
                 .duration(durations)
         }
+
+        //<!-- --------- tlLets Seja --------- -->
+        var myLets = new SplitText(".eftv-lets", { type: "chars, words" }),
+            tlLets = new TimelineMax(),
+            numLets = myLets.chars.length
+            
+        for (var i = 0; i < numLets; i++) {
+            //random value used as position parameter
+            tlLets.from(myLets.chars[i], 2, { opacity: 0 }, Math.random() * 10)
+                .add('end')
+                .duration(durations)
+        }
+
 
 
         //<!-- --------- tlTracos --------- -->

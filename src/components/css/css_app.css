@@ -60,11 +60,11 @@ table {
 
 /*  ATRIBUTES  FOR PARALLAX */
 
-  body { 
+/*   body { 
 	  overflow: hidden !important;
-  }
+  } */
   /*  ATRIBUTES  FOR PARALLAX */
-  .ctn-menu {
+/*   .ctn-menu {
 	  display: flex;
 	  position: fixed;
 	  top: 10px;
@@ -80,5 +80,5 @@ table {
 	color: #fff;
 	font-size: 45px;
 	
-  }
+  } */
   

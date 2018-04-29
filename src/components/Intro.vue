@@ -14,6 +14,7 @@
         </div>
 
 
+
         <!-- --------- letters Efetivos --------- -->
         <div class="box-letters e-fix">
             <div class="holder-letters">
@@ -24,6 +25,8 @@
             </div>
         </div>
 
+
+
         <!-- --------- box title efetivos --------- -->
         <div class="box-title-efetivos e-fix">
             <div class="holder-title-efetivos">
@@ -32,13 +35,9 @@
         </div>
 
 
+
+
     </main>
-
-
-
-
-
-
 
 </div>
 </template>
