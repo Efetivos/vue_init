@@ -1,13 +1,13 @@
 <template>
   <div id="app">
-    <div id="logoContainer"><div id="logo"></div></div>
+<!--     <div id="logoContainer"><div id="logo"></div></div>
     <div class="ctn-menu">
       <router-link to="/"></router-link>
       <router-link to="/vuetif">Vuetif</router-link>
       <router-link to="/sobre">Sobre</router-link>
       <router-link to="/preloader">Preloader</router-link>
        <router-link to="/gsap">GSAP</router-link>
-    </div>
+    </div> -->
 
     <router-view></router-view>
   </div>

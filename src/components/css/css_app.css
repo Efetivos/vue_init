@@ -59,17 +59,9 @@ table {
 
 
 /*  ATRIBUTES  FOR PARALLAX */
-html {
-	height: 100%;
-	overflow: hidden;
-  }
+
   body { 
-	margin:0;
-	padding:0;
-	height: 100%;
-	overflow-y: scroll;
-	overflow-x: hidden;
-	perspective: 1px;
+	  overflow: hidden !important;
   }
   /*  ATRIBUTES  FOR PARALLAX */
   .ctn-menu {

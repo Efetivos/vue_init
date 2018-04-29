@@ -1,13 +1,13 @@
 
-import {TimelineMax} from 'gsap';
+import { TimelineMax } from 'gsap';
 import $ from 'jquery';
 import * as THREE from 'three';
 var OrbitControls = require('three-orbit-controls')(THREE);
 var glsl = require('glslify')
-import img1 from '../images/MARCO_Cover2.png'
-import img2 from '../images/RLA_Cover.png'
-import img3 from '../images/BMW_Cover.png'
-import img4 from '../images/ULTRA_Cover.png'
+import img1 from '../images/photo1.jpg'
+import img2 from '../images/photo2.jpg'
+import img3 from '../images/photo4.jpg'
+import img4 from '../images/logo3.jpg'
 /* const shaders = {
   fragment: require('./fragment.glsl'),
   vertex: require('./vertex.glsl')
@@ -16,7 +16,7 @@ const Promise = window.Promise || require('es6-promise').Promise; */
 
 export default {
   mounted() {
-    
+
     const vertex = glsl`
     uniform float time;
     uniform float waveLength;
@@ -75,134 +75,137 @@ export default {
 
 
 
-    
-
-let camera, pos, controls, scene, renderer, geometry, geometry1, material,plane,tex1,tex2;
-let destination = {x:0,y:0};
-let textures = [];
-
-function init() {
-  scene = new THREE.Scene();
-
-  renderer = new THREE.WebGLRenderer();
-
-  renderer.setPixelRatio(window.devicePixelRatio);
-  renderer.setSize(window.innerWidth, window.innerWidth);
-
-  var container = document.getElementById('container');
-  container.appendChild(renderer.domElement);
-
-  camera = new THREE.PerspectiveCamera(
-    70,
-    window.innerWidth / window.innerHeight,
-    0.001, 100
-  );
-  camera.position.set( 0, 0, 1 );
 
 
-  controls = new OrbitControls(camera, renderer.domElement);
+    let camera, pos, controls, scene, renderer, geometry, geometry1, material, plane, tex1, tex2;
+    let destination = { x: 0, y: 0 };
+    let textures = [];
 
-  textures = [
-    THREE.ImageUtils.loadTexture( img1 ),
-    THREE.ImageUtils.loadTexture( img2 ),
-    THREE.ImageUtils.loadTexture( img3 ),
-    THREE.ImageUtils.loadTexture( img4 ),
-  ];
+    function init() {
+      scene = new THREE.Scene();
 
+      renderer = new THREE.WebGLRenderer();
 
-  material = new THREE.ShaderMaterial( {
-    side: THREE.DoubleSide,
-    uniforms: {
-      time: { type: 'f', value: 0 },
-      ratio: { type: 'f', value: 1 },
-      waveLength: { type: 'f', value: 3 },
-      mouse: { type: 'v2', value: new THREE.Vector2() },
-      resolution: { type: 'v2', value: new THREE.Vector2(window.innerWidth,window.innerHeight) },
-      img1: { type: 't', value: textures[0] }
-    },
-    // wireframe: true,
-    vertexShader: vertex,
-    fragmentShader: fragment,
-  });
+      renderer.setPixelRatio(window.devicePixelRatio);
+      renderer.setSize(window.innerWidth, window.innerWidth);
 
-  plane = new THREE.Mesh(new THREE.PlaneGeometry( 1,1, 64, 64 ),material);
-  scene.add(plane);
+      var container = document.getElementById('container');
+      container.appendChild(renderer.domElement);
 
-  resize();
-
- 
-}
-
-window.addEventListener('resize', resize); 
-function resize() {
-  var w = window.innerWidth;
-  var h = window.innerHeight;
-  renderer.setSize( w, h );
-  camera.aspect = w / h;
-
-  // calculate scene
-  let dist  = camera.position.z - plane.position.z;
-  let height = 1;
-  camera.fov = 2*(180/Math.PI)*Math.atan(height/(2*dist));
-
-  if(w/h>1) {
-    plane.scale.x = plane.scale.y = 1.05*w/h;
-  }
+      camera = new THREE.PerspectiveCamera(
+        70,
+        window.innerWidth / window.innerHeight,
+        0.001, 100
+      );
+      camera.position.set(0, 0, 1);
 
 
+      controls = new OrbitControls(camera, renderer.domElement);
 
-  camera.updateProjectionMatrix();
-}
+      textures = [
+        THREE.ImageUtils.loadTexture(img1),
+        THREE.ImageUtils.loadTexture(img2),
+        THREE.ImageUtils.loadTexture(img3),
+        THREE.ImageUtils.loadTexture(img4),
+      ];
 
-let time = 0;
-function animate() {
-  time = time+0.04;
-  material.uniforms.time.value = time;
-  
-  requestAnimationFrame(animate);
-  render();
-}
 
-function render() {
-  material.uniforms.mouse.value.x += (destination.x - material.uniforms.mouse.value.x)*0.05;
-  material.uniforms.mouse.value.y += (destination.y - material.uniforms.mouse.value.y)*0.05;
+      material = new THREE.ShaderMaterial({
+        side: THREE.DoubleSide,
+        uniforms: {
+          time: { type: 'f', value: 0 },
+          ratio: { type: 'f', value: 1.2 },
+          waveLength: { type: 'f', value: 14 },
+          mouse: { type: 'v2', value: new THREE.Vector2() },
+          resolution: { type: 'v2', value: new THREE.Vector2(window.innerWidth, window.innerHeight) },
+          img1: { type: 't', value: textures[0] }
+        },
+        // wireframe: true,
+        vertexShader: vertex,
+        fragmentShader: fragment,
+      });
 
-  renderer.render(scene, camera);
-}
+      plane = new THREE.Mesh(new THREE.PlaneGeometry(1, 1, 64, 64), material);
+      scene.add(plane);
 
-let ww = window.innerWidth;
-let wh = window.innerHeight;
+      resize();
 
-function onMousemove(e) {
-  var x = (e.clientX-ww/2)/(ww/2);
-  var y = (e.clientY-wh/2)/(wh/2);
-  destination.x = y;
-  destination.y = x;
-}
-window.addEventListener('mousemove', onMousemove);
+
+    }
+
+    window.addEventListener('resize', resize);
+    function resize() {
+      var w = window.innerWidth;
+      var h = window.innerHeight;
+      renderer.setSize(w, h);
+      camera.aspect = w / h;
+
+      // calculate scene
+      let dist = camera.position.z - plane.position.z;
+      let height = 1;
+      camera.fov = 2 * (180 / Math.PI) * Math.atan(height / (2 * dist));
+
+      if (w / h > 1) {
+        plane.scale.x = plane.scale.y = 1.15 * w / h;
+      }
 
 
 
-init();
-animate();
+      camera.updateProjectionMatrix();
+    }
+
+    let time = 0;
+    function animate() {
+      time = time + 0.12;
+      material.uniforms.time.value = time;
+
+      requestAnimationFrame(animate);
+      render();
+    }
+
+    function render() {
+      material.uniforms.mouse.value.x += (destination.x - material.uniforms.mouse.value.x) * 0.05;
+      material.uniforms.mouse.value.y += (destination.y - material.uniforms.mouse.value.y) * 0.05;
+
+      renderer.render(scene, camera);
+    }
+
+    let ww = window.innerWidth/1.4;
+    let wh = window.innerHeight/1.4;
+
+    function onMousemove(e) {
+      var x = (e.clientX - ww / 2) / (ww / 2);
+      var y = (e.clientY - wh / 2) / (wh / 2);
+      destination.x = y;
+      destination.y = x;
+    }
+    window.addEventListener('mousemove', onMousemove);
 
 
-let counter = 0;
-let animating = 0;
-$('body').on('click',function() {
-  if(animating) return;
-  animating = 1;
-  counter = (counter +1) % textures.length;
-  let tl = new TimelineMax({onComplete:function() {animating = 0;}});
-  tl
-    .to(material.uniforms.waveLength,0.5,{value: 22})
-    .to(material.uniforms.ratio,0.5,{value: 0, onComplete: function() {
-      material.uniforms.img1.value = textures[counter];
-    }},0)
-    .to(material.uniforms.ratio,0.5,{value: 1})
-    .to(material.uniforms.waveLength,0.5,{value: 3},0.5);
-});
 
+    init();
+    animate();
+
+
+    let counter = 0;
+    let animating = 0;
+    $('#container').on('click', function () {
+      if (animating) return;
+      animating = 1;
+      counter = (counter + 1) % textures.length;
+      let tl = new TimelineMax({ onComplete: function () { animating = 0; } });
+      tl
+        .to(material.uniforms.waveLength, 0.5, { value: 22 })
+        .to(material.uniforms.ratio, 0.5, {
+          value: 0, onComplete: function () {
+            material.uniforms.img1.value = textures[counter];
+          }
+        }, 0)
+        .to(material.uniforms.ratio, 0.5, { value: 1.2 })
+        .to(material.uniforms.waveLength, 0.5, { value: 26 }, 0.5);
+    });
+
+TweenMax.set('body',{overflow:'hidden'})
   } //close Mounted
 
 }//Close Export Defautl

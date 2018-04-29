@@ -6,6 +6,7 @@ import Cross from '@/components/Cross'
 import Preloader from '@/components/Preloader'
 import GsapTest from '@/components/GsapTest'
 import Three from '@/components/Three'
+import Intro from '@/components/Intro'
 import Parallax from '@/components/Parallax'
 import Menuefet from '@/components/Menuefet'
 import Vuetif from '@/components/Vuetif'
@@ -27,6 +28,11 @@ export default new Router({
     },
     {
       path: '/',
+      name: 'Intro',
+      component: Intro
+    },
+    {
+      path: '/three',
       name: 'Three',
       component: Three
     },

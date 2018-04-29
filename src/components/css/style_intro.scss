@@ -1,0 +1,70 @@
+@import 'normal-reset';
+@import 'alias-mixins';
+
+.e-fix {
+    position: fixed;
+}
+
+//<!-- --------- holder apenas seja --------- -->
+.box-apenas {
+    width: 270px;
+    height: 50px;
+    position: absolute;
+    margin-top: -8vh;
+    opacity: 0;
+
+    .holder-tracos{
+
+        .traco-apenas {
+            background: #fff;
+        }
+        .traco-hori {
+            height: 1px;
+        }
+        .traco-vert {
+            width: 1px;
+        }
+        .t-right {
+            right: 0;
+        }
+        .t-bottom {
+            bottom: 0;
+        }
+
+    }
+
+    h1.apenas {
+        position: absolute;
+        letter-spacing: 7px;
+        font-size: 18px;
+    }
+}
+
+
+//<!-- --------- letters Efetivos --------- -->
+.holder-letters {
+    @include sans;
+    margin-top: -10vh;
+
+    h1.eftv-lets {
+        letter-spacing: 32px;
+        margin-left: 32px;
+        margin-top: 65px;
+        opacity: 0.16;
+    }
+
+    h1.eftv-lets:nth-child(3) {
+        margin-top: 120px;
+
+    }
+}
+
+
+//<!-- --------- box title efetivos --------- -->
+.holder-title-efetivos {
+    h1.title-efetivos {
+        font-size: 49px;
+        letter-spacing: 11px;
+        margin-left: 11px;
+    }
+}

@@ -4,6 +4,8 @@
     <div class="out">
       <div id="container"></div>
     </div>
+
+    <div class="test"></div>
     <!-- END content -->
     <!-- BEGIN scripts -->
 
@@ -15,6 +17,12 @@
 <script scoped type="script" src="./three/js-three.js"></script>
 
 <style>
+
+#container {
+  position: relative;
+}
+
+
 </style>
 
 
