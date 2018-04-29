@@ -108,3 +108,23 @@
         }
     }
 }
+
+//<!-- --------- reveal --------- -->
+.reveal {
+    position: fixed;
+    z-index: 9;
+    background: #000;
+    height: 20vh;
+    @include mobile {
+        height: 25vh;
+    }
+}
+.reveal-up {
+    top: 0;
+    right: 0;
+}
+
+.reveal-down {
+    bottom: 0;
+    right: 0;
+}
