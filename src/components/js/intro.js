@@ -81,7 +81,6 @@ export default {
         for (var i = 0; i < numTitle; i++) {
             tlTitle
                 .from(myTitle.chars[i], 2, { opacity: 0 }, Math.random() * 2)
-                .from(myTitle.chars, 2, {cycle:{ rotation: [-40,40] }},.8)
                 .add('end')
                 .duration(3)
         }
@@ -114,6 +113,43 @@ export default {
             .to(slideIntro, 3, { opacity: .4 }, 0);
 
 
+        //<!-- ---------------------- svg play circ ---------------- -->
+
+        var circSvg = $('.another-circle'),
+            timeHover = .8
+        TweenMax.set('.circ-hover', { rotation: -90, transformOrigin: 'center center' });
+
+        var initEnter = TweenMax.fromTo('.holder-triggers', 1.8, { y: 20, autoAlpha: 0 }, { y: 0, autoAlpha: 1, ease: Power3.easeOut })
+
+
+        var hoverCirc = new TimelineMax({ paused: true })
+            .to(circSvg, timeHover, { strokeDashoffset: 64, ease: Power3.easeInOut })
+            .from('.circ-hover', timeHover, { rotation: -450, transformOrigin: 'center center', ease: Power3.easeInOut }, 0)
+            .from('.next-play', timeHover / 2, { x: -35, opacity: 0, ease: Power3.easeInOut }, timeHover / 3)
+            .to('.current-play', timeHover / 2, { x: 35, opacity: 0, ease: Power3.easeInOut }, timeHover / 3)
+            .to('#line', timeHover, { scaleX: .5, transformOrigin: 'top right', ease: Power3.easeInOut }, 0)
+            .to('.arrow-down', timeHover, { yPercent: 20, ease: Power3.easeInOut }, 0)
+            .add('end')
+        hoverCirc.reverse('end')
+
+        circSvg.add('.holder-triggers, .ctn-title .title').hover(
+            function () {
+                hoverCirc.play();
+            }, function () {
+                hoverCirc.reverse();
+            }
+        );
+        circSvg.add('.holder-triggers').hover(
+            function () {
+                $('.ctn-title').trigger('mouseenter')
+
+            }, function () {
+                $('.ctn-title').trigger('mouseleave')
+            }
+        );
+
+        TweenMax.set('.arrow-down', { rotation: -90 })
+
 
 
 
@@ -129,6 +165,9 @@ export default {
             .add(tlTitle, '4.2')
             .add(tlLets, '3')
             .add(tlScale, '3.6')
+            .add(initEnter)
+
+
 
 
 

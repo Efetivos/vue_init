@@ -25,7 +25,7 @@
 
         .traco-apenas {
             background: #fff;
-            opacity: 0.4;
+            opacity: 0.2;
         }
         .traco-hori {
             height: 1px;
@@ -51,7 +51,8 @@
             font-size: 22px;           
         }
         @include desk {
-            font-size: 22px;
+            font-size: 14px;
+            letter-spacing: 20px;
         }
     }
 }
@@ -133,3 +134,96 @@
 .slide-intro {
     opacity: 0.3;
 }
+
+
+
+
+
+
+// <!-- ---------------------- svg play circ ---------------- -->
+circle {
+    stroke-width: 1.5;
+  }
+  .svg-circ  {
+      @include flex-center;
+       cursor: pointer;
+       z-index: 2;
+      overflow: hidden;
+   }
+  
+   .static-circle {
+      opacity: .1;
+      @include mobile {
+          opacity: 0.6;
+      }
+   }
+  .another-circle {
+    stroke-dasharray: 227;
+    stroke-dashoffset: 227;
+    stroke: white;
+  }
+  
+  $sizeCirc: 200px;
+  .circ-hover {
+      width: $sizeCirc;
+      height: $sizeCirc;
+      @include mobile {
+        width: 131px;
+        height: 169px;          
+      }
+      
+  }
+  
+  
+  a.enter-home{
+     position: absolute;
+     color: #fff;
+     text-decoration: none;
+     font-size: 12px;
+     @include mobile {
+         font-size: 10px;
+         letter-spacing: 1px;
+     }
+  }
+  
+  
+  
+  
+   // <!-- --------- TRG ARROWS ----------- -->
+  
+   circle {
+     stroke-dasharray: 1;
+     stroke-dashoffset: 1;
+   }
+  
+  .arrow-down {
+     margin-top: -35px;
+     width: 200px;
+     @include mobile {
+        margin-top: 3px;
+        width: 129px;
+         
+     }
+     path {
+        fill: #fff;
+        stroke: #fff;
+     }
+  }
+  
+  .ctn-triggers {
+     position: fixed;
+     top: 76vh;
+     left: 50vw;
+     transform: translate(-50%,-50%);
+     @include mobile {
+         top: 68vh;
+     }
+        .holder-triggers {
+        display: flex;
+        width: 220px;
+        @include mobile {
+            width: auto;
+        }
+     }   
+  }
+  
