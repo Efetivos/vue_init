@@ -160,15 +160,13 @@ export default {
             .add(tlLines, '0')
             .add(function () { tlIntro.pause() }, '3.5')
             .set(slideIntro, { attr: { src: '' + img10 } })
-            .to('.box-apenas', .6, { opacity: 0 })
+            .to('.box-apenas', 1.2, { opacity: 0 })
 
             .add(tlTitle, '4.2')
             .add(tlLets, '3')
             .add(tlScale, '3.6')
+            .from('.logo-intro',1.8,{yPercent:120, ease: Power3.easeOut},'5.2')
             .add(initEnter)
-
-
-
 
 
     }//close mounted

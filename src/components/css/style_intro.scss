@@ -5,9 +5,55 @@
     position: fixed;
 }
 
+
+
+//<!-- --------- logo-intro --------- -->
+$sizeLogo: 60px;
+$sizeLodoD: 80px;
+.ctn-logo-intro {
+    position: fixed;
+    z-index: 3;
+    top: 28vh;
+    left: 50vw;
+    transform: translate(-50%, -50%);
+
+    .holder-logo-intro {
+        width: $sizeLogo;
+        height: $sizeLogo;
+        @include desk {
+            width: $sizeLodoD;
+            height: $sizeLodoD;
+        }
+
+        .wrap-logo-intro {
+            width: $sizeLogo;
+            height: $sizeLogo;
+            overflow: hidden;
+            @include desk {
+                width: $sizeLodoD;
+                height: $sizeLodoD;
+            }
+
+            .logo-intro {
+                width: $sizeLogo;
+                height: $sizeLogo;
+                @include desk {
+                    width: $sizeLodoD;
+                    height: $sizeLodoD;
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+
 //<!-- --------- holder apenas seja --------- -->
 .box-apenas {
-    width: 270px;
+    width: 290px;
     height: 50px;
     position: absolute;
     margin-top: -8vh;
@@ -45,7 +91,7 @@
     h1.apenas {
         position: absolute;
         letter-spacing: 7px;
-        font-size: 18px;
+        font-size: 12px;
         @include tablet {
             letter-spacing: 13px;
             font-size: 22px;           

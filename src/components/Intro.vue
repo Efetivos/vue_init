@@ -1,7 +1,19 @@
 <template>
 <div>
-    <main class="ctn-main e-wvw e-hvh e-rel e-flex-col">
-        
+
+    <!-- --------- logo-intro --------- -->
+    <div class="ctn-logo-intro">
+        <div class="holder-logo-intro e-rel">
+            <div class="wrap-logo-intro e-abs">
+               <img src="./images/logo-efet-branco.svg" alt="Efetivos Comunicacao Visual" class="logo-intro">
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <main class="ctn-main e-wvw e-hvh e-rel e-flex-col">        
         <!-- --------- photo-holder --------- -->
         <img src="./images/intro/eyes1.jpg" alt="" class="slide-intro e-wvw e-img-fit e-hvh mobile-intro">
 
