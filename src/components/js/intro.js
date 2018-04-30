@@ -62,7 +62,7 @@ export default {
 
         //<!-- --------- lets --------- -->
         var myLets = new SplitText(".eftv-lets", { type: "chars, words" }),
-            tlLets = new TimelineMax(),
+            tlLets = new TimelineMax({repeat:-1, yoyo:true}),
             numLets = myLets.chars.length
 
         for (var i = 0; i < numLets; i++) {
@@ -95,9 +95,6 @@ export default {
             .from('.t-left', 1, { scaleY: 0, transformOrigin: 'left bottom' })
             .add('end')
             .duration(durations)
-
-        //tlApenas.tweenTo('end')
-        //tlLines.tweenTo('end')
 
 
         //<!-- --------- REVEAL --------- -->
@@ -165,7 +162,7 @@ export default {
             .add(tlTitle, '4.2')
             .add(tlLets, '3')
             .add(tlScale, '3.6')
-            .from('.logo-intro',1.8,{yPercent:120, ease: Power3.easeOut},'5.2')
+            .from('.ctn-logo-intro',2.2,{scale:2, opacity:0,  ease: Power3.easeOut},'5.2')
             .add(initEnter)
 
 
