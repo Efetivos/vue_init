@@ -62,7 +62,7 @@ export default {
 
         //<!-- --------- lets --------- -->
         var myLets = new SplitText(".eftv-lets", { type: "chars, words" }),
-            tlLets = new TimelineMax({repeat:-1, yoyo:true}),
+            tlLets = new TimelineMax({ repeat: -1, yoyo: true }),
             numLets = myLets.chars.length
 
         for (var i = 0; i < numLets; i++) {
@@ -116,7 +116,11 @@ export default {
             timeHover = .8
         TweenMax.set('.circ-hover', { rotation: -90, transformOrigin: 'center center' });
 
-        var initEnter = TweenMax.fromTo('.holder-triggers', 1.8, { y: 20, autoAlpha: 0 }, { y: 0, autoAlpha: 1, ease: Power3.easeOut })
+        
+        var initEnter = TweenMax.fromTo('.holder-triggers', 1.8, { y: 20, autoAlpha: 0 }, { y: 0, autoAlpha: 1, ease: Power3.easeOut, onStart: function() {
+            circSvg.add('.holder-triggers, .ctn-title .title').trigger('mouseleave');
+
+        }})
 
 
         var hoverCirc = new TimelineMax({ paused: true })
@@ -155,16 +159,32 @@ export default {
             .add(tlIntro, '0')
             .add(tlApenas, '0')
             .add(tlLines, '0')
-            .add(function () { tlIntro.pause() }, '3.5')
+            .add(function () { tlIntro.pause();
+                 circSvg.add('.holder-triggers, .ctn-title .title').trigger('mouseenter'); }, '3.5')
             .set(slideIntro, { attr: { src: '' + img10 } })
             .to('.box-apenas', 1.2, { opacity: 0 })
 
             .add(tlTitle, '4.2')
             .add(tlLets, '3')
             .add(tlScale, '3.6')
-            .from('.ctn-logo-intro',2.2,{scale:2, opacity:0,  ease: Power3.easeOut},'5.2')
+            .from('.ctn-logo-intro', 2.2, { scale: 2, opacity: 0, ease: Power3.easeOut }, '5.2')
             .add(initEnter)
 
+
+        var timeOut = .8;
+        $('.ctn-triggers').click(function () {
+            circSvg.add('.holder-triggers, .ctn-title .title').trigger('mouseleave');
+            circSvg.add('.holder-triggers, .ctn-title .title').unbind('mouseenter');
+            var tlOut = new TimelineMax()
+                .to('.static-circle', .01, { opacity: 0 })
+                .to('#line', timeOut, { scaleX: 0, ease: Power3.easeIn }, 0)
+                .to('#arrow', timeOut, { opacity: 0, ease: Power3.easeIn }, 0)
+                .to('.enter-home', timeOut, { opacity: 0, ease: Power3.easeIn }, 0)
+                .staggerTo(myTitle.chars, timeOut, { opacity: 0, y: 20, ease: Power3.easeIn }, .04, 0)
+                .to('.box-letters', timeOut, { opacity: 0, ease: Power3.easeIn }, 0)
+                .to('.logo-intro', timeOut, { yPercent: 120, ease: Power3.easeIn }, 0)
+                .to('.slide-intro', timeOut * 1.6, { opacity: 0, ease: Power3.easeIn }, 0)
+        });
 
     }//close mounted
 } // close export
