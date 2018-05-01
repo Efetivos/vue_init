@@ -105,8 +105,14 @@ export default {
 
 
         //<!-- --------- scale destaque --------- -->
+        var rot = 10,
+            scl = 1.4;
+        if($(window).width() > 1024) {
+            rot = 20;            
+            scl = 1.8;
+        }
         var tlScale = new TimelineMax()
-            .from(slideIntro, 3, { scale: 1.8, rotation: 20, ease: Power3.easeOut })
+            .from(slideIntro, 3, { scale: scl, rotation: rot, ease: Power3.easeOut })
             .to(slideIntro, 3, { opacity: .4 }, 0);
 
 

@@ -15,7 +15,9 @@
 
     <main class="ctn-main e-wvw e-hvh e-rel e-flex-col">        
         <!-- --------- photo-holder --------- -->
-        <img src="./images/intro/eyes1.jpg" alt="" class="slide-intro e-wvw e-img-fit e-hvh mobile-intro">
+        <div class="holder-img-intro e-wvw e-hvh e-fix">
+            <img src="./images/intro/eyes1.jpg" alt="" class="slide-intro e-wvw e-img-fit e-hvh mobile-intro">
+        </div>
 
         
         <!-- --------- holder apenas seja --------- -->

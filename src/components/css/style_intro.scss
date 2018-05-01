@@ -5,7 +5,11 @@
     position: fixed;
 }
 
-
+.holder-img-intro {
+    left: 0;
+    top: 0;
+    overflow: hidden;
+}
 
 //<!-- --------- logo-intro --------- -->
 $sizeLogo: 60px;
@@ -116,7 +120,7 @@ $sizeLodoD: 80px;
         letter-spacing: 32px;
         margin-left: 32px;
         margin-top: 65px;
-        opacity: 0.16;
+        opacity: 0.08;
         @include desk {
             letter-spacing: calc(45px + 54 * ((53vw + 53vh) - 600px) / 820);
             margin-top: 14vh;
