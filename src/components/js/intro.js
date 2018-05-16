@@ -136,6 +136,7 @@ export default {
             .to('.current-play', timeHover / 2, { x: 35, opacity: 0, ease: Power3.easeInOut }, timeHover / 3)
             .to('#line', timeHover, { scaleX: .5, transformOrigin: 'top right', ease: Power3.easeInOut }, 0)
             .to('.arrow-down', timeHover, { yPercent: 20, ease: Power3.easeInOut }, 0)
+            .from('.enter-home',timeHover,{opacity:.2, autoRound: false, ease: Power3.easeInOut},0)
             .add('end')
         hoverCirc.reverse('end')
 

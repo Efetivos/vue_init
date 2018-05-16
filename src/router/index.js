@@ -6,7 +6,9 @@ import Cross from '@/components/Cross'
 import Preloader from '@/components/Preloader'
 import GsapTest from '@/components/GsapTest'
 import Three from '@/components/Three'
+import ThreeText from '@/components/ThreeText'
 import Intro from '@/components/Intro'
+import Tao from '@/components/Tao'
 import Parallax from '@/components/Parallax'
 import Menuefet from '@/components/Menuefet'
 import Vuetif from '@/components/Vuetif'
@@ -20,6 +22,7 @@ Vue.use(Router)
 Vue.use(Vuetify)
 
 export default new Router({
+  mode: 'history',
   routes: [
     {
       path: '/menuefet',
@@ -27,9 +30,19 @@ export default new Router({
       component: Menuefet
     },
     {
+      path: '/tao',
+      name: 'Tao',
+      component: Tao
+    },
+    {
       path: '/',
       name: 'Intro',
       component: Intro
+    },
+    {
+      path: '/threetext',
+      name: 'ThreeText',
+      component: ThreeText
     },
     {
       path: '/three',

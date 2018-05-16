@@ -4,8 +4,8 @@ import $ from 'jquery';
 import * as THREE from 'three';
 var OrbitControls = require('three-orbit-controls')(THREE);
 var glsl = require('glslify')
-import img1 from '../images/photo1.jpg'
-import img2 from '../images/photo2.jpg'
+import img1 from '../images/cutout-full.jpg'
+import img2 from '../images/intro/eyes2.png'
 import img3 from '../images/photo4.jpg'
 import img4 from '../images/logo3.jpg'
 /* const shaders = {
@@ -114,7 +114,7 @@ export default {
         side: THREE.DoubleSide,
         uniforms: {
           time: { type: 'f', value: 0 },
-          ratio: { type: 'f', value: 1.2 },
+          ratio: { type: 'f', value: 1.3 },
           waveLength: { type: 'f', value: 14 },
           mouse: { type: 'v2', value: new THREE.Vector2() },
           resolution: { type: 'v2', value: new THREE.Vector2(window.innerWidth, window.innerHeight) },

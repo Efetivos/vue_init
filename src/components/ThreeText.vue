@@ -1,10 +1,6 @@
 <template>
 <div>
-    <div class="out">
-      <div id="container"></div>
-    </div>
 
-    <div class="test"></div>
     <!-- END content -->
     <!-- BEGIN scripts -->
 
@@ -13,7 +9,7 @@
 </template>
 
 
-<script scoped type="script" src="./three/js-three.js"></script>
+<script scoped type="script" src="./three/js-threeText.js"></script>
 
 <style>
 
